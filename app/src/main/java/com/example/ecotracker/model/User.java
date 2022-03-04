@@ -1,17 +1,28 @@
 package com.example.ecotracker.model;
 
+import androidx.annotation.NonNull;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
 import java.util.List;
 
+@Entity(tableName = "users")
 public class User {
 
+    @PrimaryKey
+    @NonNull
     private String userName;
+    @NonNull
     private String password;
     private String name;
     private String level;
     private int totalPoints;
+    /*
     private List<Car> cars;
     private List<Course> courses;
     private List<Reward> rewards;
+
+     */
 
     public User() {
     }
@@ -55,6 +66,7 @@ public class User {
     public void setTotalPoints(int totalPoints) {
         this.totalPoints = totalPoints;
     }
+    /*
 
     public List<Car> getCars() {
         return cars;
@@ -79,4 +91,6 @@ public class User {
     public void setRewards(List<Reward> rewards) {
         this.rewards = rewards;
     }
+
+     */
 }

@@ -7,6 +7,7 @@ import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
 
+import com.example.ecotracker.dao.UserDao;
 import com.example.ecotracker.model.User;
 
 @Database(entities = {User.class}, exportSchema = false, version = 1)
@@ -26,4 +27,5 @@ public abstract class EcoTrackerDatabase extends RoomDatabase {
         return ecoTrackerDatabase;
     }
 
+    public abstract UserDao userDao();
 }

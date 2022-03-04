@@ -1,7 +1,13 @@
 package com.example.ecotracker.model;
 
+import androidx.annotation.NonNull;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
+@Entity(tableName = "tasks")
 public class Task {
 
+    @PrimaryKey(autoGenerate = true)
     private int id;
     private String description;
     private boolean isCompleted;
