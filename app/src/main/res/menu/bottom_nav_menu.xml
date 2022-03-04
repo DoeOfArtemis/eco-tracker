@@ -3,19 +3,19 @@
     <item
         android:id="@+id/profile"
         android:enabled="true"
-        android:title="Profile"
+        android:title="@string/profile"
         android:icon= "@drawable/ic_profile"/>
     <item
         android:id="@+id/home"
         android:enabled="true"
-        android:title="Home"
+        android:title="@string/home"
         android:icon= "@drawable/ic_home"
         />
 
     <item
         android:id= "@+id/courses"
         android:enabled="true"
-        android:title="Courses"
+        android:title="@string/courses"
         android:icon="@drawable/ic_courses"
         />
     </menu>
