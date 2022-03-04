@@ -1,14 +1,19 @@
 package com.example.ecotracker.model;
 
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
 import java.util.List;
 
+@Entity(tableName = "courses")
 public class Course {
 
+    @PrimaryKey(autoGenerate = true)
     private int id;
     private String name;
     private String description;
     private boolean isCompleted;
-    private List<Task> tasks;
+    // private List<Task> tasks;
 
     public Course() {
     }
@@ -45,6 +50,7 @@ public class Course {
         isCompleted = completed;
     }
 
+    /*
     public List<Task> getTasks() {
         return tasks;
     }
@@ -52,4 +58,6 @@ public class Course {
     public void setTasks(List<Task> tasks) {
         this.tasks = tasks;
     }
+
+     */
 }
