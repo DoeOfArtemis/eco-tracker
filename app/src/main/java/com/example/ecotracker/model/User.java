@@ -17,8 +17,9 @@ public class User {
     private String name;
     private String level;
     private int totalPoints;
-    /*
+/*
     private List<Car> cars;
+
     private List<Course> courses;
     private List<Reward> rewards;
 
