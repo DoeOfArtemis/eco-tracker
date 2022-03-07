@@ -10,6 +10,7 @@ public class Car {
     private int id;
     private String model;
     private int emission;
+    private String userName;
 
     public Car() {
     }
@@ -36,5 +37,13 @@ public class Car {
 
     public void setEmission(int emission) {
         this.emission = emission;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 }
