@@ -8,6 +8,8 @@ import androidx.room.Transaction;
 import androidx.room.Update;
 
 import com.example.ecotracker.intermediate_data.UserWithCars;
+import com.example.ecotracker.intermediate_data.UserWithCourses;
+import com.example.ecotracker.intermediate_data.UserWithRewards;
 import com.example.ecotracker.model.User;
 import java.util.List;
 
@@ -33,6 +35,14 @@ public interface UserDao {
     @Transaction
     @Query("SELECT * FROM users")
     List<UserWithCars> getUserWithCars();
+
+    @Transaction
+    @Query("SELECT * FROM users")
+    List<UserWithRewards> getUserWithRewards();
+
+    @Transaction
+    @Query("SELECT * FROM users")
+    List<UserWithCourses> getUserWithCourses();
 
 
 }

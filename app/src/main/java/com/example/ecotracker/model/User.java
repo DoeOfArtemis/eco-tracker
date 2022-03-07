@@ -17,11 +17,6 @@ public class User {
     private String name;
     private String level;
     private int totalPoints;
-/*
-    private List<Course> courses;
-    private List<Reward> rewards;
-
-     */
 
     public User() {
     }
@@ -65,23 +60,5 @@ public class User {
     public void setTotalPoints(int totalPoints) {
         this.totalPoints = totalPoints;
     }
-    /*
 
-    public List<Course> getCourses() {
-        return courses;
-    }
-
-    public void setCourses(List<Course> courses) {
-        this.courses = courses;
-    }
-
-    public List<Reward> getRewards() {
-        return rewards;
-    }
-
-    public void setRewards(List<Reward> rewards) {
-        this.rewards = rewards;
-    }
-
-     */
 }

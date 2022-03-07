@@ -8,6 +8,9 @@ import androidx.test.core.app.ApplicationProvider;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 
 import com.example.ecotracker.dao.CarDao;
+import com.example.ecotracker.dao.CourseDao;
+import com.example.ecotracker.dao.RewardDao;
+import com.example.ecotracker.dao.TaskDao;
 import com.example.ecotracker.dao.UserDao;
 import com.example.ecotracker.database.EcoTrackerDatabase;
 import com.example.ecotracker.intermediate_data.UserWithCars;
@@ -110,7 +113,6 @@ public class DaoTest {
         Assert.assertEquals(2, result);
 
     }
-
 
 }
 

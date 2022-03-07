@@ -12,6 +12,7 @@ public class Task {
     private String description;
     private boolean isCompleted;
     private int points;
+    private int courseId;
 
     public Task() {
     }
@@ -46,5 +47,13 @@ public class Task {
 
     public void setPoints(int points) {
         this.points = points;
+    }
+
+    public int getCourseId() {
+        return courseId;
+    }
+
+    public void setCourseId(int courseId) {
+        this.courseId = courseId;
     }
 }

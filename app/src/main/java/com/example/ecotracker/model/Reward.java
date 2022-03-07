@@ -10,6 +10,7 @@ public class Reward {
     private int id;
     private String name;
     private String message;
+    private String userName;
 
     public Reward() {
     }
@@ -36,5 +37,13 @@ public class Reward {
 
     public void setMessage(String message) {
         this.message = message;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 }
