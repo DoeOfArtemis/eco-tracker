@@ -13,7 +13,7 @@ public class Course {
     private String name;
     private String description;
     private boolean isCompleted;
-    // private List<Task> tasks;
+    private String userName;
 
     public Course() {
     }
@@ -50,14 +50,11 @@ public class Course {
         isCompleted = completed;
     }
 
-    /*
-    public List<Task> getTasks() {
-        return tasks;
+    public String getUserName() {
+        return userName;
     }
 
-    public void setTasks(List<Task> tasks) {
-        this.tasks = tasks;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
-
-     */
 }
