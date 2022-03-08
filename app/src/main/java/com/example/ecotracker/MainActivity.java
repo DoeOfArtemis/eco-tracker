@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
-
 import com.example.ecotracker.databinding.ActivityMainBinding;
 import com.example.ecotracker.ui.courses.CoursesFragment;
 import com.example.ecotracker.ui.home.HomeFragment;
@@ -20,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        replaceFragment(new HomeFragment());
+        replaceFragment(new ProfileFragment());
         binding.bottomNavigationView.setOnItemSelectedListener(item ->{
 
             switch (item.getItemId()) {
