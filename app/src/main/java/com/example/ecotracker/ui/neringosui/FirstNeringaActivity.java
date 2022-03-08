@@ -26,8 +26,8 @@ public class FirstNeringaActivity extends AppCompatActivity {
 
         db = EcoTrackerDatabase.getDatabase(this);
         userDao = db.userDao();
-        editText = findViewById(R.id.input);
-        button = findViewById(R.id.button_add);
+        editText = findViewById(R.id.inputUsername);
+        button = findViewById(R.id.login_button);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
