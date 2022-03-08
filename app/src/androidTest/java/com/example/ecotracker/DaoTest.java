@@ -8,10 +8,16 @@ import androidx.test.core.app.ApplicationProvider;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 
 import com.example.ecotracker.dao.CarDao;
+import com.example.ecotracker.dao.CourseDao;
+import com.example.ecotracker.dao.RewardDao;
+import com.example.ecotracker.dao.TaskDao;
 import com.example.ecotracker.dao.UserDao;
 import com.example.ecotracker.database.EcoTrackerDatabase;
+import com.example.ecotracker.intermediate_data.CourseWithTasks;
 import com.example.ecotracker.intermediate_data.UserWithCars;
 import com.example.ecotracker.model.Car;
+import com.example.ecotracker.model.Course;
+import com.example.ecotracker.model.Task;
 import com.example.ecotracker.model.User;
 
 import org.junit.After;
@@ -29,11 +35,17 @@ public class DaoTest {
     private EcoTrackerDatabase db;
     private UserDao userDao;
     private CarDao carDao;
+    private CourseDao courseDao;
+    private TaskDao taskDao;
     private User user1;
     private User user2;
     private User user3;
     private Car car1;
     private Car car2;
+    private Course course1;
+    private Task task1;
+    private Task task2;
+    private Task task3;
 
     @Before
     public void createDb() {
@@ -42,6 +54,8 @@ public class DaoTest {
 
         userDao = db.userDao();
         carDao = db.carDao();
+        courseDao = db.courseDao();
+        taskDao = db.taskDao();
 
         user1 = new User();
         user1.setUserName("Lukas");
@@ -57,6 +71,16 @@ public class DaoTest {
         car1.setModel("Toyota");
         car2 = new Car();
         car2.setModel("Tesla");
+
+        course1 = new Course();
+        course1.setId(1);
+
+        task1 = new Task();
+        task1.setPoints(5);
+        task2 = new Task();
+        task2.setPoints(10);
+        task3 = new Task();
+        task3.setPoints(15);
     }
 
     @After
@@ -111,6 +135,28 @@ public class DaoTest {
 
     }
 
+    @Test
+    public void relationshipBetweenCourseAndTask() {
+        courseDao.insert(course1);
+        task1.setCourseId(course1.getId());
+        task2.setCourseId(course1.getId());
+        task3.setCourseId(course1.getId());
+        taskDao.insert(task1);
+        taskDao.insert(task2);
+        taskDao.insert(task3);
+
+        List<CourseWithTasks> courseWithTasksList = courseDao.getCourseWithTasks();
+
+        List<Task> taskList = null;
+        for (CourseWithTasks courseWithTasks : courseWithTasksList) {
+            if(courseWithTasks.getCourse().getId() == 1) {
+                taskList = courseWithTasks.getTaskList();
+            }
+        }
+        int result = taskList.size();
+        Assert.assertEquals(3, result);
+
+    }
 
 }
 

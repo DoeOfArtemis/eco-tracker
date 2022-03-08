@@ -3,19 +3,18 @@ package com.example.ecotracker.intermediate_data;
 import androidx.room.Embedded;
 import androidx.room.Relation;
 
-import com.example.ecotracker.model.Car;
 import com.example.ecotracker.model.Course;
 import com.example.ecotracker.model.User;
 
 import java.util.List;
 
-public class UserWithCars {
+public class UserWithCourses {
 
     @Embedded
     private User user;
 
-    @Relation(parentColumn = "userName", entityColumn = "userName",  entity = Car.class)
-    public List<Car> carList;
+    @Relation(parentColumn = "userName", entityColumn = "userName", entity = Course.class)
+    public List<Course> courseList;
 
     public User getUser() {
         return user;
@@ -25,13 +24,11 @@ public class UserWithCars {
         this.user = user;
     }
 
-    public List<Car> getCarList() {
-        return carList;
+    public List<Course> getCourseList() {
+        return courseList;
     }
 
-    public void setCarList(List<Car> carList) {
-        this.carList = carList;
+    public void setCourseList(List<Course> courseList) {
+        this.courseList = courseList;
     }
-
-
 }
