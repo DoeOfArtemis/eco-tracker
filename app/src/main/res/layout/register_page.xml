@@ -11,7 +11,7 @@
         android:id="@+id/welcome_register"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="50dp"
         android:gravity="center"
         android:text="@string/come_to_the_green_side"
         android:textColor="@color/green_darker"
@@ -26,16 +26,15 @@
         android:id="@+id/welcome_joke"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="40dp"
         android:gravity="center"
         android:rotation="15"
         android:text="@string/p_s_we_have_vegan_n_cookies"
         android:textColor="@color/purple_500"
         android:textSize="15sp"
         android:textStyle="italic|bold"
-        app:layout_constraintBottom_toTopOf="@+id/add_new_user"
+        app:layout_constraintBottom_toBottomOf="@+id/add_new_user"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.82"
+        app:layout_constraintHorizontal_bias="0.94"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline_for_cookies" />
 
@@ -43,18 +42,18 @@
         android:id="@+id/input_new_username"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="25dp"
         android:ems="10"
         android:gravity="center"
         android:hint="@string/username"
+        android:importantForAutofill="no"
         android:inputType="textPersonName"
         android:minHeight="48dp"
         android:textColor="@color/white"
         android:textColorHint="@color/grey"
         app:layout_constraintEnd_toEndOf="@+id/welcome_register"
         app:layout_constraintStart_toStartOf="@+id/welcome_register"
-        app:layout_constraintTop_toBottomOf="@+id/welcome_register"
-        android:importantForAutofill="no" />
+        app:layout_constraintTop_toBottomOf="@+id/welcome_register" />
 
     <EditText
         android:id="@+id/input_new_name"
@@ -112,12 +111,14 @@
         android:id="@+id/add_new_user"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="108dp"
+        android:layout_marginTop="100dp"
         android:text="@string/register_new_user"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/input_new_password" />
+        app:layout_constraintTop_toBottomOf="@+id/input_new_password"
+        app:layout_constraintVertical_bias="0.0" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_for_cookies"

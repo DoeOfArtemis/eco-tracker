@@ -16,6 +16,8 @@ import com.example.ecotracker.ui.courses.CoursesFragment;
 import com.example.ecotracker.ui.home.HomeFragment;
 import com.example.ecotracker.ui.profile.ProfileFragment;
 
+import org.w3c.dom.Text;
+
 public class MainActivity extends AppCompatActivity {
 
     ActivityMainBinding binding;
@@ -30,6 +32,21 @@ public class MainActivity extends AppCompatActivity {
         TextView password = (TextView) findViewById(R.id.inputPassword);
         Button loginButton = (Button) findViewById(R.id.login_button);
         Button registerButton = (Button) findViewById(R.id.register_button);
+
+        // Introducing references from REGISTER page
+        TextView newUserName = (TextView) findViewById(R.id.inputUsername);
+        TextView newName = (TextView) findViewById(R.id.input_new_name);
+        TextView newEmail = (TextView) findViewById(R.id.input_new_email);
+        TextView newPassword = (TextView) findViewById(R.id.inputPassword);
+        Button registerNewUser = (Button) findViewById(R.id.add_new_user);
+
+        // go to Register page
+        registerButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                setContentView(R.layout.register_page);
+            }
+        });
 
         // password setting - username (admin) and password (admin)
         loginButton.setOnClickListener(new View.OnClickListener() {
