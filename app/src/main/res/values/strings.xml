@@ -8,4 +8,13 @@
     <string name="enter_your_password">Enter your password</string>
     <string name="enter_your_username">Enter your username</string>
     <string name="welcome_to_eco_tracker">Welcome to Eco Tracker!</string>
+    <string name="username">username</string>
+    <string name="password">password</string>
+    <string name="p_s_we_have_vegan_n_cookies">p.s. We have vegan\n cookies...</string>
+    <string name="come_to_the_green_side">Come to the green side!</string>
+    <string name="name">name</string>
+    <string name="email">email</string>
+    <string name="password">password</string>
+    <string name="username">username</string>
+    <string name="register_new_user">Register</string>
 </resources>
