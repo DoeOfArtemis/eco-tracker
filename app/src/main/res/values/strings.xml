@@ -8,4 +8,5 @@
     <string name="enter_your_password">Enter your password</string>
     <string name="enter_your_username">Enter your username</string>
     <string name="welcome_to_eco_tracker">Welcome to Eco Tracker!</string>
+    <string name="task_1">Task 1</string>
 </resources>
