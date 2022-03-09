@@ -51,7 +51,7 @@ public class HomeFragment extends Fragment {
         textView.setText(db.courseDao().findCourseById(1).getName() + " course");
 
         listView = (ListView) view.findViewById(R.id.listView);
-        tasks = db.taskDao().getAll();
+        tasks = db.taskDao().getAllByCourseId(1);
         adapter = new CustomAdapter((ArrayList) tasks, this.getContext());
         listView.setAdapter(adapter);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
