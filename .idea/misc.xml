@@ -5,24 +5,27 @@
       <map>
         <entry key="..\:/Java_sda/AndroidStudioProjects/eco-tracker/app/src/main/res/layout/activity_first.xml" value="0.16510416666666666" />
         <entry key="..\:/Java_sda/AndroidStudioProjects/eco-tracker/app/src/main/res/layout/activity_first_neringa.xml" value="0.2" />
+        <entry key="..\:/Java_sda/AndroidStudioProjects/eco-tracker/app/src/main/res/layout/activity_main.xml" value="0.13072916666666667" />
         <entry key="..\:/Java_sda/AndroidStudioProjects/eco-tracker/app/src/main/res/layout/activity_second_neringa.xml" value="0.1671875" />
         <entry key="..\:/Java_sda/AndroidStudioProjects/eco-tracker/app/src/main/res/layout/content_first_neringa.xml" value="0.1" />
         <entry key="..\:/Java_sda/AndroidStudioProjects/eco-tracker/app/src/main/res/layout/fragment_courses.xml" value="0.1671875" />
         <entry key="..\:/Java_sda/AndroidStudioProjects/eco-tracker/app/src/main/res/layout/fragment_first.xml" value="0.16510416666666666" />
-        <entry key="..\:/Java_sda/AndroidStudioProjects/eco-tracker/app/src/main/res/layout/fragment_home.xml" value="0.16510416666666666" />
+        <entry key="..\:/Java_sda/AndroidStudioProjects/eco-tracker/app/src/main/res/layout/fragment_home.xml" value="0.6" />
         <entry key="..\:/Java_sda/AndroidStudioProjects/eco-tracker/app/src/main/res/layout/fragment_profile.xml" value="0.16510416666666666" />
         <entry key="..\:/Java_sda/AndroidStudioProjects/eco-tracker/app/src/main/res/layout/fragment_second.xml" value="0.16510416666666666" />
         <entry key="..\:/Java_sda/AndroidStudioProjects/eco-tracker/app/src/main/res/layout/recyclerviewer_design_neringa.xml" value="0.1671875" />
+        <entry key="..\:/Java_sda/AndroidStudioProjects/eco-tracker/app/src/main/res/menu/bottom_nav_menu.xml" value="0.13072916666666667" />
         <entry key="..\:/Users/Roberta/AndroidStudioProjects/EcoTracker2/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1" />
         <entry key="..\:/Users/Roberta/AndroidStudioProjects/EcoTracker2/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
         <entry key="..\:/Users/Roberta/AndroidStudioProjects/EcoTracker2/app/src/main/res/layout/activity_main.xml" value="0.22" />
-        <entry key="..\:/Users/Roberta/AndroidStudioProjects/EcoTracker2/app/src/main/res/layout/fragment_courses.xml" value="0.31702728127939794" />
+        <entry key="..\:/Users/Roberta/AndroidStudioProjects/EcoTracker2/app/src/main/res/layout/fragment_courses.xml" value="0.1414324569356301" />
         <entry key="..\:/Users/Roberta/AndroidStudioProjects/EcoTracker2/app/src/main/res/layout/fragment_first.xml" value="0.22" />
-        <entry key="..\:/Users/Roberta/AndroidStudioProjects/EcoTracker2/app/src/main/res/layout/fragment_home.xml" value="0.22" />
-        <entry key="..\:/Users/Roberta/AndroidStudioProjects/EcoTracker2/app/src/main/res/layout/fragment_profile.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/Roberta/AndroidStudioProjects/EcoTracker2/app/src/main/res/layout/fragment_home.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/Roberta/AndroidStudioProjects/EcoTracker2/app/src/main/res/layout/fragment_profile.xml" value="0.1414324569356301" />
         <entry key="..\:/Users/Roberta/AndroidStudioProjects/EcoTracker2/app/src/main/res/layout/fragment_second.xml" value="0.1414324569356301" />
         <entry key="..\:/Users/Roberta/AndroidStudioProjects/EcoTracker2/app/src/main/res/layout/fragment_third.xml" value="0.1414324569356301" />
         <entry key="..\:/Users/Roberta/AndroidStudioProjects/EcoTracker2/app/src/main/res/menu/bottom_nav_menu.xml" value="0.14749893116716545" />
+<<<<<<< HEAD
         <entry key="..\:/Users/anete/Documents/eco-tracker/app/src/main/res/layout/activity_first_neringa.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/anete/Documents/eco-tracker/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/anete/Documents/eco-tracker/app/src/main/res/layout/activity_second_neringa.xml" value="0.25416666666666665" />
@@ -33,6 +36,8 @@
         <entry key="..\:/Users/anete/Documents/eco-tracker/app/src/main/res/layout/recyclerviewer_design_neringa.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/anete/Documents/eco-tracker/app/src/main/res/layout/register_page.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/anete/Documents/eco-tracker/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.2595" />
+=======
+>>>>>>> databaseFile
       </map>
     </option>
   </component>

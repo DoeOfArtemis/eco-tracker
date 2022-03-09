@@ -1,6 +1,7 @@
 package com.example.ecotracker.database;
 
 import android.content.Context;
+
 import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
@@ -14,6 +15,7 @@ import com.example.ecotracker.model.Course;
 import com.example.ecotracker.model.Reward;
 import com.example.ecotracker.model.Task;
 import com.example.ecotracker.model.User;
+import com.example.ecotracker.ui.home.HomeFragment;
 
 @Database(entities = {User.class, Car.class, Reward.class, Course.class, Task.class}, exportSchema = false, version = 1)
 public abstract class EcoTrackerDatabase extends RoomDatabase {
@@ -27,6 +29,7 @@ public abstract class EcoTrackerDatabase extends RoomDatabase {
                     EcoTrackerDatabase.class, DB_NAME)
                     .allowMainThreadQueries()
                     .fallbackToDestructiveMigration()
+                    .createFromAsset("database/eco_tracker.db")
                     .build();
         }
         return ecoTrackerDatabase;

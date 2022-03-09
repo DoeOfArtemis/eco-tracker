@@ -1,5 +1,6 @@
 package com.example.ecotracker;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -14,9 +15,6 @@ import com.example.ecotracker.databinding.ActivityMainBinding;
 import com.example.ecotracker.ui.courses.CoursesFragment;
 import com.example.ecotracker.ui.home.HomeFragment;
 import com.example.ecotracker.ui.profile.ProfileFragment;
-import com.google.android.material.button.MaterialButton;
-
-import org.w3c.dom.Text;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -75,11 +73,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     //method to replace current fragment
-    private void replaceFragment(Fragment fragment){
+    private void replaceFragment(Fragment fragment) {
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.frame_layout, fragment);
         fragmentTransaction.commit();
     }
 
-    }
+}
