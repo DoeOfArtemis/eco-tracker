@@ -1,6 +1,5 @@
 package com.example.ecotracker;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -12,27 +11,32 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+
+import com.example.ecotracker.database.EcoTrackerDatabase;
 import com.example.ecotracker.databinding.ActivityMainBinding;
 import com.example.ecotracker.ui.courses.CoursesFragment;
 import com.example.ecotracker.ui.home.HomeFragment;
 import com.example.ecotracker.ui.profile.ProfileFragment;
 
-import org.w3c.dom.Text;
-
 public class MainActivity extends AppCompatActivity {
 
     ActivityMainBinding binding;
+    EcoTrackerDatabase db;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        db = EcoTrackerDatabase.getDatabase(getApplicationContext());
 
         // Introducing references from LOGIN page.
         TextView userName =(TextView) findViewById(R.id.inputUsername);
         TextView password = (TextView) findViewById(R.id.inputPassword);
         Button loginButton = (Button) findViewById(R.id.login_button);
         Button registerButton = (Button) findViewById(R.id.register_button);
+
 
         // Introducing references from REGISTER page
         TextView newUserName = (TextView) findViewById(R.id.inputUsername);
@@ -54,7 +58,8 @@ public class MainActivity extends AppCompatActivity {
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (userName.getText().toString().equals("admin") && password.getText().toString().equals("admin")) {
+                if ((db.userDao().findByUserName(userName.getText().toString()) != null) &&
+                        (password.getText().toString().equals(db.userDao().findByUserName(userName.getText().toString()).getPassword()))) {
                     setContentView(R.layout.activity_main);
                     binding = ActivityMainBinding.inflate(getLayoutInflater());
                     setContentView(binding.getRoot());
