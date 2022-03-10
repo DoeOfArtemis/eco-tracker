@@ -1,6 +1,7 @@
 package com.example.ecotracker.ui.home;
 
 import android.content.Context;
+import android.graphics.Paint;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -59,6 +60,16 @@ public class CustomAdapter extends ArrayAdapter {
         Task task = getItem(position);
         viewHolder.textView.setText(task.getDescription());
         viewHolder.checkBox.setChecked(task.isCompleted());
+
+        viewHolder.checkBox.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                viewHolder.textView.setPaintFlags(viewHolder.textView.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
+                HomeFragment.getPoints(position);
+                HomeFragment.updateItem(position);
+                HomeFragment.removeItem(position);
+            }
+        });
         return result;
     }
 }
