@@ -1,6 +1,8 @@
 package com.example.ecotracker;
 
 import android.os.Bundle;
+import android.widget.Button;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
@@ -14,6 +16,7 @@ import com.example.ecotracker.ui.profile.ProfileFragment;
 public class MainActivity extends AppCompatActivity {
 
     ActivityMainBinding binding;
+    Button firstCourseButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
