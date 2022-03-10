@@ -27,6 +27,12 @@ public interface TaskDao {
     @Query("SELECT * FROM tasks")
     List<Task> getAll();
 
+    @Query("SELECT * FROM tasks WHERE courseId LIKE :courseId")
+    List<Task> getAllByCourseId(int courseId);
+
+    @Query("SELECT * FROM tasks WHERE courseId LIKE :courseId AND isCompleted = 0")
+    List<Task> getAllNotCompletedByCourseId(int courseId);
+
     @Query("SELECT * FROM tasks WHERE id LIKE :taskId")
     Task findTaskById(int taskId);
 }
