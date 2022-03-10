@@ -17,6 +17,7 @@ public class User {
     private String name;
     private String level;
     private int totalPoints;
+    private String email;
 
     public User() {
     }
@@ -61,5 +62,11 @@ public class User {
         this.totalPoints = totalPoints;
     }
 
+    public String getEmail() {
+        return email;
+    }
 
+    public void setEmail(String email) {
+        this.email = email;
+    }
 }

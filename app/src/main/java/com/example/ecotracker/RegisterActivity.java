@@ -16,6 +16,7 @@ public class RegisterActivity extends AppCompatActivity {
 
     EditText username;
     EditText name;
+    EditText email;
     EditText password;
     EcoTrackerDatabase db;
 
@@ -26,6 +27,7 @@ public class RegisterActivity extends AppCompatActivity {
         db = EcoTrackerDatabase.getDatabase(getApplicationContext());
         username = findViewById(R.id.input_new_username);
         name = findViewById(R.id.input_new_name);
+        email = findViewById(R.id.input_new_email);
         password = findViewById(R.id.input_new_password);
         Button registerNewUser = (Button) findViewById(R.id.add_new_user);
         registerNewUser.setOnClickListener(new View.OnClickListener() {
@@ -34,6 +36,7 @@ public class RegisterActivity extends AppCompatActivity {
                 User user = new User();
                 user.setUserName(username.getText().toString());
                 user.setName(name.getText().toString());
+                user.setEmail(email.getText().toString());
                 user.setPassword(password.getText().toString());
                 db.userDao().insert(user);
 
