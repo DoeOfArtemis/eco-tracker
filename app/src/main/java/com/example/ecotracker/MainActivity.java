@@ -7,6 +7,8 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import android.widget.Button;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
@@ -24,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
     EcoTrackerDatabase db;
 
 
+    Button firstCourseButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
