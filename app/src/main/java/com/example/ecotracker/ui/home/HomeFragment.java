@@ -94,13 +94,7 @@ public class HomeFragment extends Fragment {
 
             }
         });
-
-
-
-
         return view;
-
-
     }
 
     public static void removeItem(int position) {
