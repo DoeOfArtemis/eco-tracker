@@ -15,4 +15,5 @@
     <string name="name">name</string>
     <string name="email">email</string>
     <string name="register_new_user">Register</string>
+    <string name="task_1">Task 1</string>
 </resources>
