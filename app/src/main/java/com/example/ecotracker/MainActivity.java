@@ -1,6 +1,7 @@
 package com.example.ecotracker;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -25,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.login_page);
+        setContentView(R.layout.activity_login);
 
         // Introducing references from LOGIN page.
         TextView userName =(TextView) findViewById(R.id.inputUsername);
@@ -44,7 +45,8 @@ public class MainActivity extends AppCompatActivity {
         registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                setContentView(R.layout.register_page);
+                setContentView(R.layout.activity_register);
+                startActivity(new Intent(MainActivity.this,RegisterActivity.class));
             }
         });
 

@@ -22,7 +22,7 @@ public class FirstNeringaActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.login_page);
+        setContentView(R.layout.activity_login);
 
         db = EcoTrackerDatabase.getDatabase(this);
         userDao = db.userDao();
