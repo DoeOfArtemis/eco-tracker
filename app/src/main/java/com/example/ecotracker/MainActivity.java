@@ -64,17 +64,22 @@ public class MainActivity extends AppCompatActivity {
                     setContentView(R.layout.activity_main);
                     binding = ActivityMainBinding.inflate(getLayoutInflater());
                     setContentView(binding.getRoot());
-                    replaceFragment(new ProfileFragment());
 
                     Bundle userNameBundle = new Bundle();
                     userNameBundle.putString("userName", userName.getText().toString());
+
+                    ProfileFragment profileFragmentFirst = new ProfileFragment();
+                    profileFragmentFirst.setArguments(userNameBundle);
+                    replaceFragment(profileFragmentFirst);
 
                     binding.bottomNavigationView.setOnItemSelectedListener(item ->{
 
                         switch (item.getItemId()) {
 
                             case R.id.profile:
-                                replaceFragment(new ProfileFragment());
+                                ProfileFragment profileFragment = new ProfileFragment();
+                                profileFragment.setArguments(userNameBundle);
+                                replaceFragment(profileFragment);
                                 break;
 
                             case R.id.home:

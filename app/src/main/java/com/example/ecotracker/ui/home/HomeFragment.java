@@ -46,17 +46,17 @@ public class HomeFragment extends Fragment {
         db = EcoTrackerDatabase.getDatabase(this.getContext());
         String userNameFromLogin = getArguments().getString("userName");
         user = db.userDao().findByUserName(userNameFromLogin);
-        courseId = db.courseDao().findCourseByUser(user.getUserName()).getId();
+        if (db.courseDao().findCourseByUser(user.getUserName()) != null) {
+            courseId = db.courseDao().findCourseByUser(user.getUserName()).getId();
+            setCourseTitle(view);
+            getTasksListFromDB();
+            int totalPointsOfCourse = getTotalPointsOfCourse();
+            setProgressBarMax(view, totalPointsOfCourse);
+            progressBar.setProgress(getCurrentPoints());
 
-        setCourseTitle(view);
-        getTasksListFromDB();
-        int totalPointsOfCourse = getTotalPointsOfCourse();
-        setProgressBarMax(view, totalPointsOfCourse);
-        progressBar.setProgress(getCurrentPoints());
-
-        adapter = new CustomAdapter(tasks, this.getContext());
-        listView = (ListView) view.findViewById(R.id.listView);
-        listView.setAdapter(adapter);
+            adapter = new CustomAdapter(tasks, this.getContext());
+            listView = (ListView) view.findViewById(R.id.listView);
+            listView.setAdapter(adapter);
         /*
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -66,7 +66,7 @@ public class HomeFragment extends Fragment {
         });
 
          */
-
+        }
         return view;
     }
 
@@ -83,10 +83,11 @@ public class HomeFragment extends Fragment {
         }
         return totalPointsOfCourse;
     }
+
     private int getCurrentPoints() {
         tasks = (ArrayList<Task>) db.taskDao().getAllByCourseId(courseId);
         for (Task task : tasks) {
-            if(task.isCompleted())
+            if (task.isCompleted())
                 currentPoints += task.getPoints();
         }
         return currentPoints;
@@ -105,6 +106,7 @@ public class HomeFragment extends Fragment {
     public static void removeItem(int position) {
         tasks.remove(position);
     }
+
     public static void updateItem(int position) {
         Task task = tasks.get(position);
         task.setCompleted(true);
