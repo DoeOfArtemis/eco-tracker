@@ -26,7 +26,8 @@ public class HomeFragment extends Fragment {
     static EcoTrackerDatabase db;
     static ArrayList<Task> tasks;
     static ProgressBar progressBar;
-    static int courseTotalPoints;
+    static int currentPoints;
+    static User user;
     int courseId;
 
 
@@ -43,12 +44,15 @@ public class HomeFragment extends Fragment {
 
         db = EcoTrackerDatabase.getDatabase(this.getContext());
         String userNameFromLogin = getArguments().getString("userName");
-        courseId = db.courseDao().findCourseByUser(userNameFromLogin).getId();
+        user = db.userDao().findByUserName(userNameFromLogin);
+        courseId = db.courseDao().findCourseByUser(user.getUserName()).getId();
 
         setCourseTitle(view);
         getTasksListFromDB();
         int totalPointsOfCourse = getTotalPointsOfCourse();
         setProgressBarMax(view, totalPointsOfCourse);
+        currentPoints = db.userDao().findByUserName(userNameFromLogin).getTotalPoints();
+        progressBar.setProgress(currentPoints);
 
         adapter = new CustomAdapter(tasks, this.getContext());
         listView = (ListView) view.findViewById(R.id.listView);
@@ -100,8 +104,10 @@ public class HomeFragment extends Fragment {
 
     public static void getPoints(int position) {
         int points = tasks.get(position).getPoints();
-        courseTotalPoints += points;
-        progressBar.setProgress(courseTotalPoints);
+        currentPoints += points;
+        progressBar.setProgress(currentPoints);
+        user.setTotalPoints(currentPoints);
+        db.userDao().update(user);
         listView.setAdapter(adapter);
     }
 }
