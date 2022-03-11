@@ -33,6 +33,9 @@ public interface CourseDao {
     @Query("SELECT * FROM courses WHERE id LIKE :courseId")
     Course findCourseById(int courseId);
 
+    @Query("SELECT * FROM courses WHERE userName LIKE :userName")
+    Course findCourseByUser(String userName);
+
     @Transaction
     @Query("SELECT * FROM courses")
     List<CourseWithTasks> getCourseWithTasks();

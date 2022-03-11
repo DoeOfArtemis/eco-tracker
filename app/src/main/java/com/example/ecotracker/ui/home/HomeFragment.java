@@ -27,7 +27,8 @@ public class HomeFragment extends Fragment {
     static ArrayList<Task> tasks;
     static ProgressBar progressBar;
     static int courseTotalPoints;
-    int courseId = 1;
+    int courseId;
+
 
     public HomeFragment() {
         // Required empty public constructor
@@ -42,6 +43,7 @@ public class HomeFragment extends Fragment {
 
         db = EcoTrackerDatabase.getDatabase(this.getContext());
         String userNameFromLogin = getArguments().getString("userName");
+        courseId = db.courseDao().findCourseByUser(userNameFromLogin).getId();
 
         setCourseTitle(view);
         getTasksListFromDB();
