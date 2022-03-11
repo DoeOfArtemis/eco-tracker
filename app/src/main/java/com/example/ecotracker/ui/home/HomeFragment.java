@@ -1,5 +1,6 @@
 package com.example.ecotracker.ui.home;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -14,6 +15,7 @@ import android.widget.TextView;
 import com.example.ecotracker.R;
 import com.example.ecotracker.database.EcoTrackerDatabase;
 import com.example.ecotracker.model.Task;
+import com.example.ecotracker.model.User;
 
 import java.util.ArrayList;
 
@@ -24,7 +26,7 @@ public class HomeFragment extends Fragment {
     static EcoTrackerDatabase db;
     static ArrayList<Task> tasks;
     static ProgressBar progressBar;
-    static int totalPoints;
+    static int courseTotalPoints;
     int courseId = 1;
 
     public HomeFragment() {
@@ -39,6 +41,7 @@ public class HomeFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
 
         db = EcoTrackerDatabase.getDatabase(this.getContext());
+        String userNameFromLogin = getArguments().getString("userName");
 
         setCourseTitle(view);
         getTasksListFromDB();
@@ -80,6 +83,7 @@ public class HomeFragment extends Fragment {
 
     private void setCourseTitle(View view) {
         TextView textView = (TextView) view.findViewById(R.id.courseTitle);
+
         textView.setText(db.courseDao().findCourseById(courseId).getName() + " course");
     }
 
@@ -94,8 +98,8 @@ public class HomeFragment extends Fragment {
 
     public static void getPoints(int position) {
         int points = tasks.get(position).getPoints();
-        totalPoints += points;
-        progressBar.setProgress(totalPoints);
+        courseTotalPoints += points;
+        progressBar.setProgress(courseTotalPoints);
         listView.setAdapter(adapter);
     }
 }

@@ -14,6 +14,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.example.ecotracker.database.EcoTrackerDatabase;
 import com.example.ecotracker.databinding.ActivityMainBinding;
+import com.example.ecotracker.model.User;
 import com.example.ecotracker.ui.courses.CoursesFragment;
 import com.example.ecotracker.ui.home.HomeFragment;
 import com.example.ecotracker.ui.profile.ProfileFragment;
@@ -64,6 +65,10 @@ public class MainActivity extends AppCompatActivity {
                     binding = ActivityMainBinding.inflate(getLayoutInflater());
                     setContentView(binding.getRoot());
                     replaceFragment(new ProfileFragment());
+
+                    Bundle userNameBundle = new Bundle();
+                    userNameBundle.putString("userName", userName.getText().toString());
+
                     binding.bottomNavigationView.setOnItemSelectedListener(item ->{
 
                         switch (item.getItemId()) {
@@ -73,7 +78,10 @@ public class MainActivity extends AppCompatActivity {
                                 break;
 
                             case R.id.home:
-                                replaceFragment(new HomeFragment());
+                                HomeFragment homeFragment = new HomeFragment();
+                                homeFragment.setArguments(userNameBundle);
+                                replaceFragment(homeFragment);
+
                                 break;
 
                             case R.id.courses:
@@ -84,6 +92,7 @@ public class MainActivity extends AppCompatActivity {
 
                         return true;
                     });
+
                 } else {
                     Toast.makeText(MainActivity.this, "Login unsuccessful!", Toast.LENGTH_SHORT).show();
                 }
