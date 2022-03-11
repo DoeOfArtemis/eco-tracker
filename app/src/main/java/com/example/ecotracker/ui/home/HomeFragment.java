@@ -1,13 +1,14 @@
 package com.example.ecotracker.ui.home;
 
-import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -45,6 +46,10 @@ public class HomeFragment extends Fragment {
         db = EcoTrackerDatabase.getDatabase(this.getContext());
         String userNameFromLogin = getArguments().getString("userName");
         user = db.userDao().findByUserName(userNameFromLogin);
+
+        //displayLevel(view);
+
+
         courseId = db.courseDao().findCourseByUser(user.getUserName()).getId();
 
         setCourseTitle(view);
@@ -58,15 +63,47 @@ public class HomeFragment extends Fragment {
         listView = (ListView) view.findViewById(R.id.listView);
         listView.setAdapter(adapter);
 
-        /*
+
+
+
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
-
+                reloadFragment();
             }
         });
-         */
+
         return view;
+    }
+/*
+    private static void displayLevel(View view) {
+        TextView currentLevel = (TextView) view.findViewById(R.id.currentLevelTextView);
+        currentLevel.setText("Current level: " + setUserLevel());
+    }
+
+ */
+
+    private static String setUserLevel() {
+        int totalPoints = user.getTotalPoints();
+        String level = "";
+        if(totalPoints < 100) {
+            level = "Little green sprout";
+        }
+        else if(totalPoints < 500) {
+            level = "Tree lover";
+        }
+        else if(totalPoints < 800) {
+            level = "Turtles' friend";
+        }
+        else if(totalPoints < 1000) {
+            level = "Green guru";
+        }
+        else {
+            level = "Eco hero";
+        }
+        user.setLevel(level);
+        db.userDao().update(user);
+        return level;
     }
 
     private void setProgressBarMax(View view, int totalPointsOfCourse) {
@@ -109,5 +146,13 @@ public class HomeFragment extends Fragment {
         user.setTotalPoints(currentPoints);
         db.userDao().update(user);
         listView.setAdapter(adapter);
+    }
+    private void reloadFragment() {
+        Fragment currentFragment = null;
+        currentFragment = getParentFragmentManager().findFragmentByTag("home");
+        final FragmentTransaction fragmentTransaction = getParentFragmentManager().beginTransaction();
+        fragmentTransaction.detach(currentFragment);
+        fragmentTransaction.attach(currentFragment);
+        fragmentTransaction.commit();
     }
 }
