@@ -46,64 +46,28 @@ public class HomeFragment extends Fragment {
         db = EcoTrackerDatabase.getDatabase(this.getContext());
         String userNameFromLogin = getArguments().getString("userName");
         user = db.userDao().findByUserName(userNameFromLogin);
-
-        //displayLevel(view);
-
-
         courseId = db.courseDao().findCourseByUser(user.getUserName()).getId();
 
         setCourseTitle(view);
         getTasksListFromDB();
         int totalPointsOfCourse = getTotalPointsOfCourse();
         setProgressBarMax(view, totalPointsOfCourse);
-        currentPoints = db.userDao().findByUserName(userNameFromLogin).getTotalPoints();
-        progressBar.setProgress(currentPoints);
+        progressBar.setProgress(getCurrentPoints());
 
         adapter = new CustomAdapter(tasks, this.getContext());
         listView = (ListView) view.findViewById(R.id.listView);
         listView.setAdapter(adapter);
-
-
-
-
+        /*
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
-                reloadFragment();
+
             }
         });
 
+         */
+
         return view;
-    }
-/*
-    private static void displayLevel(View view) {
-        TextView currentLevel = (TextView) view.findViewById(R.id.currentLevelTextView);
-        currentLevel.setText("Current level: " + setUserLevel());
-    }
-
- */
-
-    private static String setUserLevel() {
-        int totalPoints = user.getTotalPoints();
-        String level = "";
-        if(totalPoints < 100) {
-            level = "Little green sprout";
-        }
-        else if(totalPoints < 500) {
-            level = "Tree lover";
-        }
-        else if(totalPoints < 800) {
-            level = "Turtles' friend";
-        }
-        else if(totalPoints < 1000) {
-            level = "Green guru";
-        }
-        else {
-            level = "Eco hero";
-        }
-        user.setLevel(level);
-        db.userDao().update(user);
-        return level;
     }
 
     private void setProgressBarMax(View view, int totalPointsOfCourse) {
@@ -118,6 +82,14 @@ public class HomeFragment extends Fragment {
             totalPointsOfCourse += task.getPoints();
         }
         return totalPointsOfCourse;
+    }
+    private int getCurrentPoints() {
+        tasks = (ArrayList<Task>) db.taskDao().getAllByCourseId(courseId);
+        for (Task task : tasks) {
+            if(task.isCompleted())
+                currentPoints += task.getPoints();
+        }
+        return currentPoints;
     }
 
     private void getTasksListFromDB() {
@@ -146,13 +118,5 @@ public class HomeFragment extends Fragment {
         user.setTotalPoints(currentPoints);
         db.userDao().update(user);
         listView.setAdapter(adapter);
-    }
-    private void reloadFragment() {
-        Fragment currentFragment = null;
-        currentFragment = getParentFragmentManager().findFragmentByTag("home");
-        final FragmentTransaction fragmentTransaction = getParentFragmentManager().beginTransaction();
-        fragmentTransaction.detach(currentFragment);
-        fragmentTransaction.attach(currentFragment);
-        fragmentTransaction.commit();
     }
 }
