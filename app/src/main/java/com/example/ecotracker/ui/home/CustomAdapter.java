@@ -61,14 +61,17 @@ public class CustomAdapter extends ArrayAdapter {
         viewHolder.textView.setText(task.getDescription());
         viewHolder.checkBox.setChecked(task.isCompleted());
 
+
         viewHolder.checkBox.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 viewHolder.textView.setPaintFlags(viewHolder.textView.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
                 HomeFragment.getPoints(position);
                 HomeFragment.updateItem(position);
+
                 //HomeFragment.removeItem(position);
             }
+
         });
         return result;
     }

@@ -18,6 +18,7 @@ public class RegisterActivity extends AppCompatActivity {
     EditText name;
     EditText email;
     EditText password;
+    Button registerNewUser, goBackToLogin;
     EcoTrackerDatabase db;
 
     @Override
@@ -29,7 +30,17 @@ public class RegisterActivity extends AppCompatActivity {
         name = findViewById(R.id.input_new_name);
         email = findViewById(R.id.input_new_email);
         password = findViewById(R.id.input_new_password);
-        Button registerNewUser = (Button) findViewById(R.id.add_new_user);
+        registerNewUser = findViewById(R.id.add_new_user);
+        goBackToLogin = findViewById(R.id.goBackToLogin);
+
+        goBackToLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(RegisterActivity.this,LoginActivity.class));
+            }
+        });
+
+
         registerNewUser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

@@ -39,12 +39,6 @@ public class MainActivity extends AppCompatActivity {
         Button registerButton = (Button) findViewById(R.id.register_button);
 
 
-        // Introducing references from REGISTER page
-        TextView newUserName = (TextView) findViewById(R.id.inputUsername);
-        TextView newName = (TextView) findViewById(R.id.input_new_name);
-        TextView newEmail = (TextView) findViewById(R.id.input_new_email);
-        TextView newPassword = (TextView) findViewById(R.id.inputPassword);
-        Button registerNewUser = (Button) findViewById(R.id.add_new_user);
 
         // go to Register page
         registerButton.setOnClickListener(new View.OnClickListener() {

@@ -113,6 +113,7 @@ public class HomeFragment extends Fragment {
         db.taskDao().update(task);
     }
 
+
     public static void getPoints(int position) {
         int points = tasks.get(position).getPoints();
         currentPoints += points;
