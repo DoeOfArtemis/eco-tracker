@@ -33,12 +33,12 @@ public class RegisterActivity extends AppCompatActivity {
         registerNewUser = findViewById(R.id.add_new_user);
         goBackToLogin = findViewById(R.id.goBackToLogin);
 
-        /*goBackToLogin.setOnClickListener(new View.OnClickListener() {
+        goBackToLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(RegisterActivity.this,LoginActivity.class));
+                startActivity(new Intent(RegisterActivity.this,MainActivity.class));
             }
-        });*/
+        });
 
 
         registerNewUser.setOnClickListener(new View.OnClickListener() {
