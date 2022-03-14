@@ -25,6 +25,8 @@ public class RegisterActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
+
+
         db = EcoTrackerDatabase.getDatabase(getApplicationContext());
         username = findViewById(R.id.input_new_username);
         name = findViewById(R.id.input_new_name);
@@ -36,7 +38,7 @@ public class RegisterActivity extends AppCompatActivity {
         goBackToLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(RegisterActivity.this,MainActivity.class));
+                startActivity(new Intent(RegisterActivity.this,LoginActivity.class));
             }
         });
 
