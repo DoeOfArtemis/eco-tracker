@@ -35,7 +35,7 @@
                   android:layout_height="match_parent"
                   android:text="@string/recycle_par1" />
 
-              <EditText
+              <TextView
                   android:id="@+id/editTextTextPersonName"
                   android:layout_width="match_parent"
                   android:layout_height="wrap_content"
@@ -57,7 +57,7 @@
                   android:layout_height="wrap_content"
                   android:text="@string/add_tasks" />
 
-              <EditText
+              <TextView
                   android:id="@+id/editTextTextPersonName4"
                   android:layout_width="match_parent"
                   android:layout_height="wrap_content"
@@ -79,7 +79,7 @@
                   android:layout_height="wrap_content"
                   android:text="@string/add_tasks" />
 
-              <EditText
+              <TextView
                   android:id="@+id/editTextTextPersonName5"
                   android:layout_width="match_parent"
                   android:layout_height="wrap_content"
@@ -101,7 +101,7 @@
                   android:layout_height="wrap_content"
                   android:text="@string/add_tasks" />
 
-              <EditText
+              <TextView
                   android:id="@+id/editTextTextPersonName6"
                   android:layout_width="match_parent"
                   android:layout_height="wrap_content"
@@ -123,7 +123,7 @@
                   android:layout_height="wrap_content"
                   android:text="@string/add_tasks" />
 
-              <EditText
+              <TextView
                   android:id="@+id/editTextTextPersonName7"
                   android:layout_width="match_parent"
                   android:layout_height="wrap_content"
@@ -146,7 +146,7 @@
                   android:text="@string/add_tasks" />
 
 
-              <EditText
+              <TextView
                   android:id="@+id/editTextTextPersonName8"
                   android:layout_width="match_parent"
                   android:layout_height="wrap_content"
@@ -168,7 +168,7 @@
                   android:layout_height="wrap_content"
                   android:text="@string/add_tasks" />
 
-              <EditText
+              <TextView
                   android:id="@+id/editTextTextPersonName9"
                   android:layout_width="match_parent"
                   android:layout_height="wrap_content"
@@ -190,7 +190,7 @@
                   android:layout_height="wrap_content"
                   android:text="@string/add_tasks" />
 
-              <EditText
+              <TextView
                   android:id="@+id/editTextTextPersonName10"
                   android:layout_width="match_parent"
                   android:layout_height="wrap_content"
@@ -212,7 +212,7 @@
                   android:layout_height="wrap_content"
                   android:text="@string/add_tasks" />
 
-              <EditText
+              <TextView
                   android:id="@+id/editTextTextPersonName11"
                   android:layout_width="match_parent"
                   android:layout_height="wrap_content"
@@ -234,7 +234,7 @@
                   android:layout_height="wrap_content"
                   android:text="@string/add_tasks" />
 
-              <EditText
+              <TextView
                   android:id="@+id/editTextTextPersonName12"
                   android:layout_width="match_parent"
                   android:layout_height="wrap_content"
@@ -257,7 +257,7 @@
                   android:layout_height="wrap_content"
                   android:text="@string/add_tasks" />
 
-              <EditText
+              <TextView
                   android:id="@+id/editTextTextPersonName13"
                   android:layout_width="match_parent"
                   android:layout_height="wrap_content"
@@ -279,7 +279,7 @@
                   android:layout_height="wrap_content"
                   android:text="@string/add_tasks" />
 
-              <EditText
+              <TextView
                   android:id="@+id/editTextTextPersonName14"
                   android:layout_width="match_parent"
                   android:layout_height="wrap_content"
