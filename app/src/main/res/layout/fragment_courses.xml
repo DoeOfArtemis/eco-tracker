@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background_better"
+    android:padding="20dp"
     tools:context=".MainActivity">
 
     <ProgressBar
@@ -12,53 +13,39 @@
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="207dp"
         android:layout_height="44dp"
-        android:layout_marginStart="108dp"
-        android:layout_marginTop="89dp"
-        android:layout_marginEnd="96dp"
-        android:layout_marginBottom="677dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="@+id/welcomeText"
+        app:layout_constraintStart_toStartOf="@+id/welcomeText"
+        app:layout_constraintTop_toBottomOf="@+id/welcomeText" />
 
     <ImageButton
         android:id="@+id/zero_waste_basics"
-        android:layout_width="160dp"
-        android:layout_height="160dp"
-        android:layout_marginStart="228dp"
-        android:layout_marginTop="257dp"
-        android:layout_marginEnd="74dp"
-        android:layout_marginBottom="450dp"
+        android:layout_width="190dp"
+        android:layout_height="140dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
         android:adjustViewBounds="true"
         android:contentDescription="@string/zero_waste_course"
         android:onClick="viewCourse"
         android:scaleType="centerCrop"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintEnd_toStartOf="@+id/guideline2"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.508"
+        app:layout_constraintTop_toBottomOf="@+id/textView3"
         app:srcCompat="@drawable/zero_waste_lifestyle_vector"
         tools:ignore="ImageContrastCheck" />
 
     <ImageButton
         android:id="@+id/how_to_recycle"
-        android:layout_width="160dp"
-        android:layout_height="160dp"
-        android:layout_marginStart="67dp"
-        android:layout_marginTop="255dp"
-        android:layout_marginEnd="246dp"
-        android:layout_marginBottom="450dp"
+        android:layout_width="175dp"
+        android:layout_height="146dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
         android:adjustViewBounds="true"
         android:contentDescription="@string/recycle_course"
         android:onClick="viewCourse"
         android:scaleType="centerCrop"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.49"
+        app:layout_constraintStart_toStartOf="@+id/guideline2"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
         app:srcCompat="@drawable/recycling_bins"
         tools:ignore="ImageContrastCheck" />
 
@@ -66,14 +53,8 @@
         android:id="@+id/welcomeText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="157dp"
-        android:layout_marginLeft="157dp"
-        android:layout_marginTop="141dp"
-        android:layout_marginEnd="157dp"
-        android:layout_marginRight="157dp"
-        android:layout_marginBottom="650dp"
         android:text="(current points)"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -98,28 +79,31 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="75dp"
-        android:layout_marginTop="396dp"
-        android:layout_marginEnd="243dp"
-        android:layout_marginBottom="395dp"
+        android:layout_marginTop="8dp"
         android:text="How to recycle"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintHorizontal_bias="0.481"
+        app:layout_constraintStart_toEndOf="@+id/textView3"
+        app:layout_constraintTop_toBottomOf="@+id/progressBar" />
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="226dp"
-        android:layout_marginTop="396dp"
-        android:layout_marginEnd="71dp"
-        android:layout_marginBottom="395dp"
+        android:layout_marginTop="8dp"
         android:text="Zero waste basics"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/guideline2"
+        app:layout_constraintHorizontal_bias="0.634"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/progressBar" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="184dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
