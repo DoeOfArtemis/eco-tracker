@@ -13,6 +13,7 @@ public class Task {
     private boolean isCompleted;
     private int points;
     private int courseId;
+    private boolean inProgress;
 
     public Task() {
     }
@@ -55,5 +56,13 @@ public class Task {
 
     public void setCourseId(int courseId) {
         this.courseId = courseId;
+    }
+
+    public boolean isInProgress() {
+        return inProgress;
+    }
+
+    public void setInProgress(boolean inProgress) {
+        this.inProgress = inProgress;
     }
 }
