@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import com.example.ecotracker.database.EcoTrackerDatabase;
 import com.example.ecotracker.model.User;
@@ -14,7 +15,8 @@ import com.example.ecotracker.model.User;
 public class AccountSettingsActivity extends AppCompatActivity {
 
     EcoTrackerDatabase db;
-    EditText userName, password, name, email;
+    TextView userName;
+    EditText password, name, email;
     Button saveChanges;
 
     @Override
@@ -41,7 +43,7 @@ public class AccountSettingsActivity extends AppCompatActivity {
         saveChanges.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                user.setUserName(userName.getText().toString());
+
                 user.setPassword(password.getText().toString());
                 user.setName(name.getText().toString());
                 user.setEmail(email.getText().toString());
