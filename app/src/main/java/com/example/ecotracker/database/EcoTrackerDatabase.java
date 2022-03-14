@@ -28,7 +28,7 @@ public abstract class EcoTrackerDatabase extends RoomDatabase {
             ecoTrackerDatabase = Room.databaseBuilder(context.getApplicationContext(),
                     EcoTrackerDatabase.class, DB_NAME)
                     .allowMainThreadQueries()
-                    .fallbackToDestructiveMigration()
+                    //.fallbackToDestructiveMigration()
                     .createFromAsset("database/eco_tracker.db")
                     .build();
         }
