@@ -52,7 +52,10 @@ public class RegisterActivity extends AppCompatActivity {
                 user.setEmail(email.getText().toString());
                 user.setPassword(password.getText().toString());
                 user.setLevel("Little green sprout");
+
                 db.userDao().insert(user);
+
+                //DatabaseClass.getDatabase(getApplicationContext()).getDao().insertAllData(model);
 
                 startActivity(new Intent(RegisterActivity.this,LoginActivity.class));
             }
