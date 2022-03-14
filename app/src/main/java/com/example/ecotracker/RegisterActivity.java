@@ -54,7 +54,7 @@ public class RegisterActivity extends AppCompatActivity {
                 user.setLevel("Little green sprout");
                 db.userDao().insert(user);
 
-                startActivity(new Intent(RegisterActivity.this,MainActivity.class));
+                startActivity(new Intent(RegisterActivity.this,LoginActivity.class));
             }
         });
     }
