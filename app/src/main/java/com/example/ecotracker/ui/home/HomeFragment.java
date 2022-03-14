@@ -85,6 +85,7 @@ public class HomeFragment extends Fragment {
     }
 
     private int getCurrentPoints() {
+        currentPoints = 0;
         tasks = (ArrayList<Task>) db.taskDao().getAllByCourseId(courseId);
         for (Task task : tasks) {
             if (task.isCompleted())
@@ -118,8 +119,6 @@ public class HomeFragment extends Fragment {
         int points = tasks.get(position).getPoints();
         currentPoints += points;
         progressBar.setProgress(currentPoints);
-        user.setTotalPoints(currentPoints);
-        db.userDao().update(user);
         listView.setAdapter(adapter);
     }
 }
