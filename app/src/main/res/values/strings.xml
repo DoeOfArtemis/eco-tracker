@@ -18,4 +18,82 @@
     <string name="task_1">Task 1</string>
     <string name="first_course_fragment">First Course fragment</string>
     <string name="second_course_fragment">Second course fragment</string>
+    <string name="recycle_course">How to recycle. Image description: four recycling bins</string>
+    <string name="zero_waste_course">Zero waste basics. Image description: various zero waste lifestyle attributes such as reusable cups, bags etc. </string>
+
+
+    <!--Recycling course text-->
+    <string name="recycle_par1">Waste sorting is a simple process that requires neither a lot of time, nor any special resources. While sorting waste, the key is to separate from household waste the types of waste that can be recycled. \n
+        Zala josta suggests dividing the total waste stream into the following groups: \n
+        Packaging materials (plastic, glass, paper/ cardboard);\n
+        Metal; \n
+        Batteries; \n
+        Electrical equipment; \n
+        Environmentally hazardous waste; \n
+        Medical waste; \n
+        Biodegradable waste; \n
+        Reusable things; \n
+        Bulky waste and construction waste; \n
+        Household waste not suitable for recycling</string>
+    <string name="recycle_plastic">These are mostly empty PET bottles, containers, boxes, film and bags. \n
+        How to collect: prepare for recycling by washing and removing the impurities, such as food residues, flattening as much as possible.\n
+        Suitable for recycling: flattened plastic beverage bottles, plastic bags, film, plastic boxes. \n
+        Not suitable for recycling: dirty plastic products, oil bottles, yogurt, sour cream or margarine containers, toys, household goods, household items. \n
+        Where to deliver: any separate collection container for plastic waste (usually yellow) or to a specially arranged ECO site.</string>
+    <string name="recycle_glass">They are: all kinds of glass jars, containers, bottles.\n
+        How to collect: prepare for recycling by washing and removing the impurities, such as food residues. \n
+        Suitable for recycling: glass jars, bottles, window glass.\n
+        Not suitable for recycling: mirror glass, auto glass, oil bottles, balsam bottles (of clay)\n
+        Where to deliver: all the jars and bottles to any sortes collection container for glass waste (usually green) or a specially arranged ECO site. Window glass should be usually delivered to EKO sites.</string>
+    <string name="recycle_paper">They are: all paper packaging, cardboard, newspapers, magazines, books, note paper, egg boxes, and other paper/ cardboard products. \n
+        How to collect: prepare for recycling by removing the impurities and flattening as much as possible.\n
+        Suitable for recycling: newsprint, cardboard, writing paper, books, unsorted paper, all kinds of paper/ cardboard products, also stapled.\n
+        Not suitable for recycling: paper and cardboard that is wet, dirty, containing food impurities are laminated. \n
+        Where to deliver: any separate collection container for paper waste (usually blue) or a specially arranged ECO site. Paper can also be delivered to paper-mill Ligatne by signing an agreement on paper waste removal.</string>
+    <string name="recycle_metal">These are: all types of metal products, and metal packaging such as cans or tins. \n
+        How to collect: prepare for recycling by removing impurities such as food residues, flattening to possible extent. \n
+        Suitable for recycling: all kinds of metal products free of contaminants. \n
+        Not suitable for recycling: greasy, dirty metal packages.\n
+        Where to deliver: to any EKO site or specialized scrap purchasing points in exchange for an appropriate fee.</string>
+    <string name="recycle_batteries">They are: all kinds of batteries and accumulators of various electrical devices. \n
+        How to collect: collected separately from other waste, keeping away from moisture.\n
+        Suitable for recycling: any batteries and rechargeable batteries, and batteries that have leaked. \n
+        Where to deliver: any specialized battery collection container, which is located in the battery POS - stores, as well as educational institutions, government bodies and specialized ECO sites.</string>
+    <string name="recycle_appliances">They are: any (big or small) electrical and electronic devices that are operated by a power source.\n
+        How to collect: prepare for recycling by disconnecting from the power supply. Before scrapping it shall not be disassembled by oneself.\n
+        Suitable for recycling: any type of electrical equipment. \n
+        Where to deliver: any EKO site. Take the opportunity to get in touch with collection companies of deteriorated electric equipment, which will remove free of charge the deteriorated appliances from your home. If you purchase new electrical equipment, according to the legislative provisions the seller shall free of charge accept from you the same kind of obsolete electrical equipment and ensure its utilization.</string>
+    <string name="recycle_hazardous">They are: waste industrial oils, oil filters, used car tires \n
+        How to collect: collect in specialized containers provided by the manager of environmentally hazardous products on a contract basis. Tires are collected without any special rules. \n
+        Suitable for recycling: environmentally hazardous waste free of contaminants. \n
+        Where to deliver: a specially arranged ECO site or a point of collection of environmentally hazardous products. From private customers without charge there are accepted up to 4 car tires. If you want to deliver more than 4 tires, then it is a paid service.</string>
+    <string name="recycle_medical">It is any kind of medication, which has expired.\n
+        How to collect: collect in a separate bag. Ensure that bottles are firmly sealed. \n
+        Suitable for disposal: any medication, which has expired or, which is no longer used. Do not: Rinse medication down the sewer system, or donate unused medication to others.\n
+        Where to deliver: any point of collection of hazardous waste or a nearby pharmacy.</string>
+    <string name="recycle_biodegradable">They are: any waste of natural origin - fruit and vegetable leftovers, egg shells, biopolymers packaging, also wet paper waste.\n
+        How to collect: collect in a separate container preparing for composting. \n
+        Not suitable for composting: dairy and meat products leftovers, which during the decomposition will distribute an unpleasant odor and promote bacterial growth. \n
+        Where to deliver: compost at the back garden, creating a compost pile or compost box.</string>
+    <string name="recycle_reusable">They are: clothing, shoes, household goods, textiles, furniture and other things that can be reused.\n
+        Where to deliver: donate to charity, the Red Cross or orphanages, homes for the elderly. Old blankets and worn clothing will serve animal shelters.</string>
+    <string name="recycle_construction">They are old and broken-down shell of soft furniture, any redecoration waste. \n
+        Where to deliver: You should contact the waste management with a request to provide you with a special container to collect the mentioned waste. This is a paid service</string>
+    <string name="recycle_household">Everything else that could not be classified to any of the recyclable material groups is household waste. It is brought to a regular unsorted waste container - it will be stored in a waste site and will not be recycled.</string>
+
+    <!--Titles for recycling course-->
+    <string name="add_tasks">Add tasks</string>
+    <string name="recycle_title_plastic">Plastic packaging waste</string>
+    <string name="recycle_title_glass">Glass packaging waste</string>
+    <string name="recycle_title_paper">Paper and cardboard wastes</string>
+    <string name="recycle_title_metal">Metal waste</string>
+    <string name="recycle_title_batteries">Waste batteries and accumulators</string>
+    <string name="recycle_title_appliances">Deteriorated electrical appliances</string>
+    <string name="recycle_title_hazardous">Environmentally hazardous waste</string>
+    <string name="recycle_title_medical">Medical waste</string>
+    <string name="recycle_title_biodegradable">Biodegradable waste</string>
+    <string name="recycle_title_reusable">Reusable waste</string>
+    <string name="recycle_title_construction">Bulky waste and construction waste</string>
+    <string name="recycle_title_household">Household waste not suitable for recycling</string>
+
 </resources>
