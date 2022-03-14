@@ -19,7 +19,7 @@ public class AccountSettingsActivity extends AppCompatActivity {
     EcoTrackerDatabase db;
     TextView userName;
     EditText password, name, email;
-    Button saveChanges;
+    Button saveChanges, deleteAccount;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +52,15 @@ public class AccountSettingsActivity extends AppCompatActivity {
                 db.userDao().update(user);
                 finish();
 
+            }
+        });
+
+        deleteAccount = findViewById(R.id.account_settings_delete_button);
+        deleteAccount.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                db.userDao().delete(user);
+                startActivity(new Intent(AccountSettingsActivity.this, LoginActivity.class));
             }
         });
     }
