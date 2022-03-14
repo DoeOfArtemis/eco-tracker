@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.ecotracker.LoginActivity;
 import com.example.ecotracker.MainActivity;
 import com.example.ecotracker.R;
 import com.example.ecotracker.RegisterActivity;
@@ -52,7 +53,7 @@ public class ProfileFragment extends Fragment {
         logOutButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getActivity(), MainActivity.class));
+                startActivity(new Intent(getActivity(), LoginActivity.class));
             }
         });
         return view;
