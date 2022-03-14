@@ -2,20 +2,15 @@ package com.example.ecotracker.ui.profile;
 
 import android.content.Intent;
 import android.os.Bundle;
-
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
-
 import com.example.ecotracker.LoginActivity;
-import com.example.ecotracker.MainActivity;
+import com.example.ecotracker.AccountSettingsActivity;
 import com.example.ecotracker.R;
-import com.example.ecotracker.RegisterActivity;
 import com.example.ecotracker.database.EcoTrackerDatabase;
 import com.example.ecotracker.model.User;
 
@@ -24,7 +19,7 @@ public class ProfileFragment extends Fragment {
     EcoTrackerDatabase db;
     User user;
     TextView userName, name, email, level;
-    Button logOutButton;
+    Button logOutButton, changeAccountSettingsButton;
 
 
     public ProfileFragment() {
@@ -56,6 +51,20 @@ public class ProfileFragment extends Fragment {
                 startActivity(new Intent(getActivity(), LoginActivity.class));
             }
         });
+
+
+        changeAccountSettingsButton = (Button) view.findViewById(R.id.accountSettingsButton);
+        changeAccountSettingsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(),AccountSettingsActivity.class);
+                intent.putExtra("user", user.getUserName());
+                intent.putExtra("password", user.getPassword());
+                startActivity(intent);
+               // ((Activity) getActivity()).overridePendingTransition(0,0);
+            }
+        });
+
         return view;
     }
 
