@@ -40,10 +40,11 @@
         android:id="@+id/firstFragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
         android:gravity="center"
         android:text="@string/profile"
-        android:textColor="#159E91"
-        android:textSize="40sp"
+        android:textColor="@color/purple_500"
+        android:textSize="30sp"
         android:textStyle="bold|italic"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -51,7 +52,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/accountSettingsButton"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_marginTop="20dp"
@@ -128,8 +129,9 @@
         android:id="@+id/profile_userName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="16dp"
         android:text="userName"
+        android:textColor="@color/green_darker"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.11"
@@ -142,6 +144,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:text="level"
+        android:textColor="@color/green_darker"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="@+id/textView9"
         app:layout_constraintTop_toBottomOf="@+id/textView9" />
@@ -152,6 +155,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:text="name"
+        android:textColor="@color/green_darker"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="@+id/textView"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
@@ -162,6 +166,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:text="email"
+        android:textColor="@color/green_darker"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="@+id/textView8"
         app:layout_constraintTop_toBottomOf="@+id/textView8" />
