@@ -11,12 +11,14 @@
         android:id="@+id/save_account_changes_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
         android:text="Save changes"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/account_settings_email"
+        app:layout_constraintHorizontal_bias="0.516"
         app:layout_constraintStart_toStartOf="@+id/account_settings_email"
         app:layout_constraintTop_toBottomOf="@+id/textView14"
-        app:layout_constraintVertical_bias="0.337" />
+        app:layout_constraintVertical_bias="0.092" />
 
     <TextView
         android:id="@+id/textView6"

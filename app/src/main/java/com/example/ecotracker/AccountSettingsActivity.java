@@ -11,6 +11,8 @@ import android.widget.TextView;
 
 import com.example.ecotracker.database.EcoTrackerDatabase;
 import com.example.ecotracker.model.User;
+import com.example.ecotracker.ui.home.HomeFragment;
+import com.example.ecotracker.ui.profile.ProfileFragment;
 
 public class AccountSettingsActivity extends AppCompatActivity {
 
@@ -48,6 +50,8 @@ public class AccountSettingsActivity extends AppCompatActivity {
                 user.setName(name.getText().toString());
                 user.setEmail(email.getText().toString());
                 db.userDao().update(user);
+                finish();
+
             }
         });
     }

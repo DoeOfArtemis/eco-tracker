@@ -61,7 +61,6 @@ public class ProfileFragment extends Fragment {
                 intent.putExtra("user", user.getUserName());
                 intent.putExtra("password", user.getPassword());
                 startActivity(intent);
-               // ((Activity) getActivity()).overridePendingTransition(0,0);
             }
         });
 
