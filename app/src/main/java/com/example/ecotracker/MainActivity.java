@@ -104,6 +104,7 @@ public class MainActivity extends AppCompatActivity {
     
     public void addTasks(View view) {
         for (Task task: db.taskDao().getAllByCourseId(1)) {
+            task.setCompleted(false);
             task.setInProgress(true);
             db.taskDao().update(task);
         }

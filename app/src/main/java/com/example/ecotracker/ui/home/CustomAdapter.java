@@ -68,9 +68,10 @@ public class CustomAdapter extends ArrayAdapter {
                 viewHolder.textView.setPaintFlags(viewHolder.textView.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
                 HomeFragment.getPoints(position);
                 HomeFragment.updateItem(position);
+                //checkmark visualization
 
 
-                //HomeFragment.removeItem(position);
+                //deprecated - HomeFragment.removeItem(position);
             }
 
         });
