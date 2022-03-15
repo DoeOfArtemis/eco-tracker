@@ -44,6 +44,8 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
+
+        // go to Main page
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
