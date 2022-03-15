@@ -49,7 +49,6 @@ public class HomeFragment extends Fragment {
         if (db.courseDao().findCourseByUser(user.getUserName()) != null) {
             courseId = db.courseDao().findCourseByUser(user.getUserName()).getId();
             setCourseTitle(view);
-            //getTasksListFromDB();
             ArrayList <Task> inProgressTasks = getInProgressTasksFromDB(courseId);
             int totalPointsOfCourse = getTotalPointsOfCourse();
             setProgressBarMax(view, totalPointsOfCourse);
@@ -89,8 +88,11 @@ public class HomeFragment extends Fragment {
         currentPoints = 0;
         tasks = (ArrayList<Task>) db.taskDao().getAllByCourseId(courseId);
         for (Task task : tasks) {
-            if (task.isCompleted())
+            if (task.isCompleted()){
                 currentPoints += task.getPoints();
+            }
+
+
         }
         return currentPoints;
     }
@@ -122,9 +124,14 @@ public class HomeFragment extends Fragment {
 
 
     public static void getPoints(int position) {
-        int points = tasks.get(position).getPoints();
-        currentPoints += points;
-        progressBar.setProgress(currentPoints);
-        listView.setAdapter(adapter);
+        Task task = tasks.get(position);
+        if(task.isCompleted() == false) {
+            int points = task.getPoints();
+            currentPoints += points;
+            progressBar.setProgress(currentPoints);
+            listView.setAdapter(adapter);
+        }
+
+
     }
 }
