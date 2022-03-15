@@ -33,6 +33,15 @@ public interface TaskDao {
     @Query("SELECT * FROM tasks WHERE courseId LIKE :courseId AND isCompleted = 0")
     List<Task> getAllNotCompletedByCourseId(int courseId);
 
+    @Query("SELECT * FROM tasks WHERE courseId LIKE :courseId AND inProgress = 1 AND isCompleted = 0 ")
+    List<Task> getAllInProgressByCourseId(int courseId);
+
+    @Query("UPDATE tasks SET inProgress = 1 WHERE id LIKE :taskId")
+    void setInProgress(int taskId);
+
+    @Query("UPDATE tasks SET inProgress = 0 WHERE id LIKE :taskId")
+    void setNotInProgress(int taskId);
+
     @Query("SELECT * FROM tasks WHERE id LIKE :taskId")
     Task findTaskById(int taskId);
 }

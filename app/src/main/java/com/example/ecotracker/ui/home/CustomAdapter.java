@@ -69,6 +69,7 @@ public class CustomAdapter extends ArrayAdapter {
                 HomeFragment.getPoints(position);
                 HomeFragment.updateItem(position);
 
+
                 //HomeFragment.removeItem(position);
             }
 

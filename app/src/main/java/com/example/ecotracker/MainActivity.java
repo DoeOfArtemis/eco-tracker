@@ -14,8 +14,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.room.Query;
+
 import com.example.ecotracker.database.EcoTrackerDatabase;
 import com.example.ecotracker.databinding.ActivityMainBinding;
+import com.example.ecotracker.model.Task;
 import com.example.ecotracker.model.User;
 import com.example.ecotracker.ui.courses.CoursesFragment;
 import com.example.ecotracker.ui.courses.FirstCourseFragment;
@@ -96,5 +99,17 @@ public class MainActivity extends AppCompatActivity {
                 break;
         }
     }
+    
+    //method to add tasks to in progress list
+    
+    public void addTasks(View view) {
+        for (Task task: db.taskDao().getAllByCourseId(1)) {
+            task.setInProgress(true);
+            db.taskDao().update(task);
+        }
+    }
+
+    //method to mark task no longer in progress?
+
 
 }
